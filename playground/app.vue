@@ -1,6 +1,6 @@
 <template>
   <!-- Page Navigation -->
-  <Navigation />
+  <NavigationButtons />
 
   <!-- Teleport the "Subject" component to the target CSS selector inside the page -->
   <client-only>
@@ -8,7 +8,7 @@
       v-show="isTargetPresent"
       :to="targetId"
     >
-      <Subject />
+      <ExampleComponent />
     </Teleport>
   </client-only>
 
@@ -19,7 +19,6 @@
 <script setup lang="ts">
 import { ref, watch, onMounted, onUnmounted } from 'vue'
 import { useMutationObserver } from '@vueuse/core'
-import Subject from '~/components/Subject.vue'
 
 // Default the <Teleport> target to the SSR-friendly '#teleports' element
 const targetId = ref('#teleports')
