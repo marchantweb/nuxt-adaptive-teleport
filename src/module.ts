@@ -11,8 +11,6 @@ export default defineNuxtModule<ModuleOptions>({
   // Default configuration options of the Nuxt module
   defaults: {},
   setup(_options, _nuxt) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     const resolver = createResolver(import.meta.url)
 
     addComponent({
