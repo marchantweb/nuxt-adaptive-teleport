@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "nuxt-adaptive-teleport-playground",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate"
+  },
+  "dependencies": {
+    "nuxt": "^3.13.2"
+  }
+}
