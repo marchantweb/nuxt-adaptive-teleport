@@ -1,5 +1,5 @@
 {
-  "name": "adaptive-teleport",
+  "name": "nuxt-adaptive-teleport",
   "version": "1.0.0",
   "description": "A variation of Vue's <Teleport> component that adapts to Nuxt page route changes.",
   "repository": "marchantweb/nuxt-adaptive-teleport",

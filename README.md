@@ -2,7 +2,11 @@
 
 [![Nuxt][nuxt-src]][nuxt-href]
 
-`<AdaptiveTeleport>` is a variation of Vue's `<Teleport>` component that adapts to route changes in `<NuxtPage>`. It works by using a `watch` on the route, as well as a Mutation Observer on the CSS selector for the teleport target, to know when to "refresh" the teleport instance.
+`<AdaptiveTeleport>` works similarly to Vue's built-in `<Teleport>` component, but with the added benefit of being able to adapt to route changes, so it can persist children across pages without needing to re-mount them.
+
+It works by using a `watch` on the route, as well as a Mutation Observer on the CSS selector for the teleport target, to know when to "refresh" the teleport instance.
+
+The most common use case for this is for large, complex components that take a long time to mount, but that need to be within the page DOM of multiple pages. By using `<AdaptiveTeleport>`, you can ensure that the component is only mounted once, and is simply moved around the DOM you navigate between pages.
 
 - [Release Notes / Changelog](/CHANGELOG.md)
 
@@ -14,7 +18,42 @@ Install the module to your Nuxt application with one command:
 npx nuxi module add nuxt-adaptive-teleport
 ```
 
-That's it! You can now use Nuxt Adaptive Teleport in your Nuxt app ✨
+## Usage
+
+The `<AdaptiveTeleport>` component can be used in your layouts, or in `app.vue` - anywhere above the `<NuxtPage>` component.On each page where you want to display the component, you drop in an element DOM element with your choice of ID.
+
+```vue
+<!-- app.vue -->
+<template>
+  
+  <!-- Choose a CSS selector to place the component -->
+  <AdaptiveTeleport to="#my-target">
+    <MyComponent>
+  </AdaptiveTeleport>
+  
+    <!-- AdaptiveTeleport needs to reside above the NuxtPage component -->
+  <NuxtPage />
+</template>
+
+<!--my-page-1.vue-->
+<template>
+  <div id="my-target">
+    <!-- The component will render here -->
+  </div>
+</template>
+
+<!--my-page-2.vue-->
+<template>
+  <div id="my-target">
+    <!-- If you navigate here, it will continue to render without re-mounting -->
+  </div>
+</template>
+
+<!--my-page-3.vue-->
+<template>
+    <!-- If your page doesn't include the target, it will be hidden (still mounted) -->
+</template>
+```
 
 
 ## Contribution
