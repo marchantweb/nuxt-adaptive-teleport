@@ -8,8 +8,6 @@ It works by using a `watch` on the route, as well as a Mutation Observer on the 
 
 The most common use case for this is for large, complex components that take a long time to mount, but that need to be within the page DOM of multiple pages. By using `<AdaptiveTeleport>`, you can ensure that the component is only mounted once, and is simply moved around the DOM you navigate between pages.
 
-- [Release Notes / Changelog](/CHANGELOG.md)
-
 ## Quick Setup
 
 Install the module to your Nuxt application with one command:
