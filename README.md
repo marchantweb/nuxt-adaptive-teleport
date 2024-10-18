@@ -1,5 +1,8 @@
 # Nuxt Adaptive Teleport
 
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
 `<AdaptiveTeleport>` works similarly to Vue's built-in `<Teleport>` component, but with the added benefit of being able to adapt to route changes, so it can persist children across pages without needing to re-mount them.
